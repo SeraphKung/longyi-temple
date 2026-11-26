@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#731f27">
+  <meta name="description" content="龍懿慈惠堂線上求籤，六十甲子籤詩、擲筊確認與籤意參考。">
+  <meta property="og:title" content="龍懿慈惠堂｜六十甲子籤">
+  <meta property="og:description" content="靜心請示，抽取六十甲子籤，閱讀籤詩與解說。">
+  <meta property="og:type" content="website">
+  <title>龍懿慈惠堂｜六十甲子籤</title>
+  <style>
+    :root{--red:#771f29;--red2:#9c3437;--gold:#d5a64e;--gold2:#f1d58e;--ink:#2d211b;--muted:#776a5d;--paper:#fffaf0;--white:#fffdf9;--line:#eadcc1;--green:#35624b;--shadow:0 18px 46px rgba(66,34,24,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.7}button,input{font:inherit}button{cursor:pointer}a{color:inherit}.skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:10px;z-index:20}.skip:focus{left:8px}
+    .topbar{height:70px;padding:0 clamp(18px,5vw,72px);display:flex;align-items:center;justify-content:space-between;background:#fffdf9;border-bottom:1px solid rgba(213,166,78,.22)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;color:var(--red);letter-spacing:.08em}.brand-mark{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:20px}.nav{display:flex;gap:26px;align-items:center;font-size:15px}.nav a{text-decoration:none;color:#5d4b40}.nav a:hover{color:var(--red)}
+    .hero{position:relative;min-height:540px;background:linear-gradient(90deg,rgba(38,14,17,.83),rgba(38,14,17,.42) 54%,rgba(38,14,17,.08)),url('assets/temple.jpg') center 43%/cover;display:flex;align-items:center;color:#fff;padding:64px clamp(20px,8vw,124px)}.hero:after{content:"";position:absolute;inset:auto 0 0;height:10px;background:linear-gradient(90deg,var(--gold),#fff1c9,var(--gold))}.hero-content{max-width:670px;position:relative;z-index:1}.eyebrow{color:var(--gold2);letter-spacing:.25em;font-size:14px;font-weight:700}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.18;letter-spacing:.08em;margin:16px 0 18px;text-shadow:0 2px 10px #261116}.hero p{font-size:clamp(17px,2vw,20px);max-width:580px;color:#fff7e9;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{border:0;border-radius:999px;padding:13px 23px;font-weight:750;min-height:48px;transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-2px)}.btn:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #2477a9;outline-offset:3px}.btn-primary{background:var(--gold2);color:#451c1d;box-shadow:0 8px 22px rgba(0,0,0,.19)}.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.68)}.btn-red{background:var(--red);color:#fff}.btn-light{background:#f8efdd;color:var(--red);border:1px solid #e8d6b2}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .section{padding:68px clamp(18px,6vw,90px)}.intro{max-width:780px;text-align:center;margin:0 auto 34px}.kicker{font-size:13px;letter-spacing:.22em;color:var(--red2);font-weight:800}.section h2{font-size:clamp(28px,4vw,42px);line-height:1.3;color:var(--red);margin:8px 0 12px}.intro p{color:var(--muted);margin:0}.ritual{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:24px;max-width:1100px;margin:0 auto}.panel{background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:clamp(22px,4vw,38px)}.panel h3{font-size:23px;color:var(--red);margin:0 0 6px}.step-lead{color:var(--muted);margin:0 0 20px}.draw-box{border-radius:17px;background:linear-gradient(140deg,#fff8e8,#f5e8cc);padding:24px;text-align:center;border:1px solid #ecd8aa}.draw-symbol{width:90px;height:90px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:#fffaf0;border:1px solid #e5cc8e;color:var(--red);font-size:43px;box-shadow:0 7px 18px #875b2c1c}.draw-number{font-family:serif;font-size:26px;color:var(--red);font-weight:700;min-height:40px}.draw-hint{color:#736354;margin:0 0 17px}.cup-list{display:flex;gap:9px;justify-content:center;margin:19px 0}.cup{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #e7d8bf;display:grid;place-items:center;color:#9c8e7c;font-weight:800}.cup.success{background:#e9f2eb;color:var(--green);border-color:#a9c4ae}.cup.fail{background:#fae8e4;color:var(--red);border-color:#e5a9a0}.status{min-height:27px;color:var(--muted);font-size:14px;margin:4px 0 12px}.ritual-note{font-size:13px;color:#7b6e61;margin:16px 0 0}.photo-card{overflow:hidden;padding:0;position:relative}.photo-card img{width:100%;height:100%;min-height:390px;object-fit:cover;display:block}.photo-caption{position:absolute;left:0;right:0;bottom:0;padding:42px 24px 22px;color:#fff;background:linear-gradient(transparent,rgba(35,13,14,.78))}.photo-caption strong{font-size:22px;letter-spacing:.06em}.photo-caption span{display:block;font-size:14px;color:#fff0d6}
+    .result-wrap{max-width:900px;margin:32px auto 0;display:none}.result-wrap.show{display:block;animation:rise .45s ease-out}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}.result-card{background:var(--white);border:1px solid var(--gold);border-radius:22px;box-shadow:0 20px 50px #59331820;overflow:hidden}.result-head{background:linear-gradient(120deg,#702029,#922c32);color:#fff;text-align:center;padding:26px 20px}.result-head .small{color:#f5d999;letter-spacing:.2em;font-size:13px}.result-head h3{color:#fff;font-family:serif;font-size:30px;margin:3px 0}.poem{padding:28px 22px;text-align:center;font-family:serif;font-size:clamp(20px,3.4vw,26px);line-height:1.95;letter-spacing:.08em;color:#40251d}.meaning{border-top:1px solid #eee1ca;margin:0 25px;padding:20px 4px 5px}.meaning h4{margin:0 0 7px;color:var(--red);font-size:17px}.meaning p{margin:0;color:#514239}.interpret{font-size:14px;color:#6c5d51;padding:0 28px 22px}.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 20px 25px}
+    .lookup{background:#f5eddd}.lookup-box{max-width:840px;margin:auto;display:flex;gap:10px}.lookup-box input{flex:1;min-width:0;border:1px solid #d7c5a2;border-radius:999px;padding:12px 18px;background:#fff;font-size:16px}.lookup-hint{text-align:center;color:var(--muted);font-size:14px}.all-list{max-width:1100px;margin:25px auto 0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.qian-chip{border:1px solid #eadbbd;background:#fffdf9;color:#62463a;border-radius:12px;padding:10px 8px;font-size:14px;text-align:center}.qian-chip:hover{border-color:var(--gold);color:var(--red);background:#fff8e9}.about{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;max-width:1050px;margin:auto}.about img{display:block;width:100%;max-height:440px;object-fit:cover;border-radius:18px;box-shadow:var(--shadow)}.about p{color:#62554b}.notice{background:#f4ead7;border-left:4px solid var(--gold);padding:14px 16px;border-radius:0 12px 12px 0;color:#62554b;font-size:14px}.footer{background:#321b1a;color:#f7ebd5;padding:38px clamp(20px,6vw,90px);text-align:center}.footer a{color:#f3d58e}.footer p{margin:7px auto;max-width:780px;font-size:14px}.social{display:flex;justify-content:center;gap:18px;margin:17px 0}.social a{text-decoration:none;border-bottom:1px solid #cda957;padding:4px 1px}.source{font-size:12px!important;color:#ddcbb3!important}
+    @media(max-width:760px){.topbar{height:60px}.nav{gap:13px;font-size:13px}.nav a:nth-child(2){display:none}.hero{min-height:520px;padding:48px 22px;background-position:54% center}.hero h1{font-size:43px}.hero p{font-size:17px}.section{padding:52px 16px}.ritual{grid-template-columns:1fr}.photo-card{min-height:350px}.photo-card img{min-height:350px;max-height:430px}.all-list{grid-template-columns:repeat(3,1fr);gap:8px}.qian-chip{font-size:13px;padding:9px 5px}.about{grid-template-columns:1fr}.about img{max-height:390px}.panel{padding:22px 18px}.draw-box{padding:19px 12px}.lookup-box{flex-direction:column}.lookup-box .btn{width:100%}.result-head h3{font-size:26px}.poem{padding:23px 13px}.meaning{margin:0 17px}.interpret{padding:0 20px 20px}}
+    @media(max-width:390px){.brand{font-size:14px;gap:8px}.brand-mark{width:32px;height:32px}.nav{gap:9px}.hero h1{font-size:37px}.all-list{grid-template-columns:repeat(2,1fr)}.actions .btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+  <script src="qian-data.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">懿</span><span>龍懿慈惠堂</span></a>
+    <nav class="nav" aria-label="主要導覽"><a href="#ritual">線上求籤</a><a href="#catalogue">六十甲子籤</a><a href="#about">關於本堂</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-content"><div class="eyebrow">誠心祈請・靜心自省</div><h1 id="hero-title">龍懿慈惠堂<br>六十甲子籤</h1><p>先靜下心，專注於一件想請示的事。抽籤、擲筊與讀籤，讓傳統文化陪伴你整理心意。</p><div class="actions"><a class="btn btn-primary" href="#ritual">開始線上求籤</a><a class="btn btn-ghost" href="#catalogue">查閱六十首籤詩</a></div></div>
+    </section>
+    <section class="section" id="ritual">
+      <div class="intro"><div class="kicker">ONLINE FORTUNE</div><h2>靜心請示，循序求籤</h2><p>請先默念所問之事，一事一籤。網頁擲筊是隨機模擬，提供線上體驗；若需正式請示，請親至龍懿慈惠堂。</p></div>
+      <div class="ritual">
+        <div class="panel">
+          <h3>線上求籤</h3><p class="step-lead">依序抽籤並擲出三次聖筊，確認後閱讀籤詩。</p>
+          <div class="draw-box" aria-live="polite">
+            <div class="draw-symbol" aria-hidden="true">籤</div>
+            <div class="draw-number" id="drawNumber">請先靜心</div>
+            <p class="draw-hint" id="drawHint">默念一件想請示的事，再開始抽籤。</p>
+            <button class="btn btn-red" id="drawButton" type="button">抽取一支籤</button>
+            <div class="cup-list" aria-label="三次擲筊結果"><span class="cup" id="cup0">一</span><span class="cup" id="cup1">二</span><span class="cup" id="cup2">三</span></div>
+            <div class="status" id="status" role="status" aria-live="polite">尚未抽籤</div>
+            <button class="btn btn-light" id="throwButton" type="button" disabled>擲筊請示</button>
+          </div>
+          <p class="ritual-note">本頁擲筊結果由瀏覽器隨機產生，並非實際筊杯或神明指示。擲出非聖筊時，請依個人信仰斟酌是否重新請示。</p>
+        </div>
+        <div class="panel photo-card"><img src="assets/yuchimu.jpg" alt="龍懿慈惠堂瑤池金母聖像" loading="lazy"><div class="photo-caption"><strong>瑤池金母</strong><span>龍懿慈惠堂恭奉聖像</span></div></div>
+      </div>
+      <div class="result-wrap" id="resultWrap" aria-live="polite"></div>
+    </section>
+    <section class="section lookup" id="catalogue">
+      <div class="intro"><div class="kicker">THE 60 LOTS</div><h2>六十甲子籤詩</h2><p>輸入籤號或干支查閱籤詩與解說。不同宮廟籤本可能有異文，請以實際求籤處版本為準。</p></div>
+      <form class="lookup-box" id="lookupForm"><label class="skip" for="lookupInput">輸入籤號或干支</label><input id="lookupInput" type="search" inputmode="search" placeholder="輸入籤號 1–60 或干支，例如：甲子" autocomplete="off"><button class="btn btn-red" type="submit">查閱籤詩</button></form>
+      <p class="lookup-hint" id="lookupHint">也可以直接選擇籤號</p>
+      <div class="all-list" id="allList" aria-label="六十甲子籤列表"></div>
+    </section>
+    <section class="section" id="about">
+      <div class="about"><div><div class="kicker">LONGYI TEMPLE</div><h2>龍懿慈惠堂</h2><p>以誠敬之心親近信仰，也以平常心看待籤詩。籤文可作為自我省思與整理方向的參考；面對人生重要決定，仍請蒐集資訊並審慎判斷。</p><div class="notice">本網站為線上文化體驗，非即時問事或正式廟務服務。疾病、法律、投資及其他重大事項，請另向合格專業人士諮詢。</div></div><img src="assets/temple.jpg" alt="龍懿慈惠堂殿內供桌與神龕實景" loading="lazy"></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="social"><a href="https://www.facebook.com/share/1E22LqorHq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">前往 Facebook 專頁</a><a href="#catalogue">查閱籤詩</a></div><p>龍懿慈惠堂｜六十甲子籤線上體驗</p><p class="source">籤詩文字依維基文庫《天上聖母六十甲子籤》修訂版整理（oldid 13371100），採 CC BY-SA 4.0；各廟版本或有異文。本站解說為重新撰寫，僅供文化參考。</p><p class="source"><a href="https://zh.wikisource.org/w/index.php?title=天上聖母六十甲子籤&oldid=13371100" target="_blank" rel="noopener noreferrer">查看籤詩底本</a> ・ <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 授權</a></p>
+  <p class="source">網站程式不使用外部 JavaScript 套件、追蹤器或第三方服務。</p></footer>
+  <script>
+  (()=>{
+    const data=window.QIAN_DATA||[];const $=s=>document.querySelector(s);let current=null,holy=0,finished=false;
+    const wrap=$('#resultWrap'),status=$('#status'),drawButton=$('#drawButton'),throwButton=$('#throwButton');
+    function cardHTML(q,source='draw'){
+      const lines=q.poem.map(x=>`<div>${x}</div>`).join('');
+      return `<article class="result-card"><div class="result-head"><div class="small">六十甲子籤・第 ${String(q.id).padStart(2,'0')} 籤</div><h3>${q.gz}</h3></div><div class="poem">${lines}</div><div class="meaning"><h4>籤詩解說</h4><p>${q.meaning}</p></div><p class="interpret">${source==='draw'?'這份解說是對詩意的白話整理，作為思考參考，不作絕對預言。':'各廟籤本可能有不同寫法；請以實際求籤處版本為準。'}</p><div class="result-actions"><button class="btn btn-light" data-share="copy" type="button">複製分享連結</button><button class="btn btn-light" data-share="native" type="button">分享此籤</button></div></article>`;
+    }
+    function showCard(q,source){if(!q)return;wrap.innerHTML=cardHTML(q,source);wrap.classList.add('show');wrap.scrollIntoView({behavior:'smooth',block:'center'});const url=new URL(location.href);url.searchParams.set('qian',String(q.id));history.replaceState({},'',url);}
+    function resetCups(){holy=0;for(let i=0;i<3;i++){const c=$(`#cup${i}`);c.className='cup';c.textContent=['一','二','三'][i]}}
+    drawButton.addEventListener('click',()=>{current=data[Math.floor(Math.random()*data.length)];finished=false;resetCups();wrap.classList.remove('show');wrap.innerHTML='';$('#drawNumber').textContent=`第 ${String(current.id).padStart(2,'0')} 籤・${current.gz}`;$('#drawHint').textContent='請確認心中所問之事，再擲筊請示。';status.textContent='籤已抽出，等待擲筊確認';throwButton.disabled=false;drawButton.textContent='重新抽籤'});
+    throwButton.addEventListener('click',()=>{if(!current||finished)return;const n=Math.random();const cup=$(`#cup${holy}`);if(n<1/3){cup.classList.add('success');cup.textContent='聖';holy++;status.textContent=`聖筊 ${holy} / 3`;if(holy===3){finished=true;throwButton.disabled=true;status.textContent='三次聖筊，顯示籤詩';$('#drawHint').textContent='請靜心閱讀籤詩，並以平常心思考。';showCard(current,'draw')}}else{cup.classList.add('fail');cup.textContent=n<2/3?'笑':'陰';status.textContent=n<2/3?'笑筊，未作確認。':'陰筊，未作確認。';$('#drawHint').textContent='本次未完成三次聖筊確認；可重新抽籤，或先停下來整理心意。';throwButton.disabled=true;drawButton.textContent='重新抽籤'}});
+    $('#lookupForm').addEventListener('submit',e=>{e.preventDefault();const raw=$('#lookupInput').value.trim();let q;if(/^\d{1,2}$/.test(raw))q=data[Number(raw)-1];else q=data.find(x=>x.gz===raw||x.gz.includes(raw));if(q){$('#lookupHint').textContent=`已找到第 ${String(q.id).padStart(2,'0')} 籤・${q.gz}`;showCard(q,'lookup')}else $('#lookupHint').textContent='查無此籤，請輸入 1–60 或完整干支，例如「甲子」。'});
+    $('#allList').innerHTML=data.map(q=>`<button class="qian-chip" type="button" data-id="${q.id}">第 ${String(q.id).padStart(2,'0')} 籤　${q.gz}</button>`).join('');$('#allList').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b){const q=data[Number(b.dataset.id)-1];$('#lookupInput').value=q.gz;$('#lookupHint').textContent=`已找到第 ${String(q.id).padStart(2,'0')} 籤・${q.gz}`;showCard(q,'lookup')}});
+    wrap.addEventListener('click',async e=>{const b=e.target.closest('[data-share]');if(!b)return;const url=location.href,title=`龍懿慈惠堂｜第${String(current?.id||new URL(location.href).searchParams.get('qian')).padStart(2,'0')}籤`;try{if(b.dataset.share==='native'&&navigator.share){await navigator.share({title,text:'龍懿慈惠堂六十甲子籤',url})}else{await navigator.clipboard.writeText(url);b.textContent='連結已複製';setTimeout(()=>b.textContent='複製分享連結',1800)}}catch(err){if(err.name!=='AbortError'){b.textContent='請使用瀏覽器分享功能';setTimeout(()=>b.textContent='分享此籤',1800)}}});
+    const requested=Number(new URL(location.href).searchParams.get('qian'));if(requested>=1&&requested<=60){const q=data[requested-1];$('#lookupInput').value=q.gz;showCard(q,'lookup')}
+  })();
+  </script>
+</body>
+</html>
