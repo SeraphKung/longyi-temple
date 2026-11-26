@@ -34,20 +34,21 @@
       <div class="hero-content"><div class="eyebrow">誠心祈請・靜心自省</div><h1 id="hero-title">龍懿慈惠堂<br>六十甲子籤</h1><p>先靜下心，專注於一件想請示的事。抽籤、擲筊與讀籤，讓傳統文化陪伴你整理心意。</p><div class="actions"><a class="btn btn-primary" href="#ritual">開始線上求籤</a><a class="btn btn-ghost" href="#catalogue">查閱六十首籤詩</a></div></div>
     </section>
     <section class="section" id="ritual">
-      <div class="intro"><div class="kicker">ONLINE FORTUNE</div><h2>靜心請示，循序求籤</h2><p>請先默念所問之事，一事一籤。網頁擲筊是隨機模擬，提供線上體驗；若需正式請示，請親至龍懿慈惠堂。</p></div>
+      <div class="intro"><div class="kicker">ONLINE FORTUNE</div><h2>抽籤後，立即看籤詩</h2><p>默念一件想請示的事，按下抽籤按鈕，籤號、籤詩和解說會立刻顯示。擲筊是可略過的隨機體驗，不會擋住籤詩。</p></div>
       <div class="ritual">
         <div class="panel">
-          <h3>線上求籤</h3><p class="step-lead">依序抽籤並擲出三次聖筊，確認後閱讀籤詩。</p>
+          <h3>線上求籤</h3><p class="step-lead">① 默念一件事　② 按下抽籤　③ 直接看下方籤詩與解說</p>
           <div class="draw-box" aria-live="polite">
             <div class="draw-symbol" aria-hidden="true">籤</div>
             <div class="draw-number" id="drawNumber">請先靜心</div>
-            <p class="draw-hint" id="drawHint">默念一件想請示的事，再開始抽籤。</p>
-            <button class="btn btn-red" id="drawButton" type="button">抽取一支籤</button>
-            <div class="cup-list" aria-label="三次擲筊結果"><span class="cup" id="cup0">一</span><span class="cup" id="cup1">二</span><span class="cup" id="cup2">三</span></div>
+            <p class="draw-hint" id="drawHint">按下抽籤後，結果會立刻顯示在下方。</p>
+            <button class="btn btn-red" id="drawButton" type="button">立即抽一支籤</button>
+            <p class="draw-hint">擲筊為選用體驗，可略過；抽到的籤詩不需要等擲筊才會顯示。</p>
+            <div class="cup-list" aria-label="三次擲筊體驗結果"><span class="cup" id="cup0">一</span><span class="cup" id="cup1">二</span><span class="cup" id="cup2">三</span></div>
             <div class="status" id="status" role="status" aria-live="polite">尚未抽籤</div>
-            <button class="btn btn-light" id="throwButton" type="button" disabled>擲筊請示</button>
+            <button class="btn btn-light" id="throwButton" type="button" disabled>擲筊體驗（可略過）</button>
           </div>
-          <p class="ritual-note">本頁擲筊結果由瀏覽器隨機產生，並非實際筊杯或神明指示。擲出非聖筊時，請依個人信仰斟酌是否重新請示。</p>
+          <p class="ritual-note">本頁擲筊結果由瀏覽器隨機產生，僅供體驗，不是實際筊杯或神明指示。</p>
         </div>
         <div class="panel photo-card"><img src="assets/yuchimu.jpg" alt="龍懿慈惠堂瑤池金母聖像" loading="lazy"><div class="photo-caption"><strong>瑤池金母</strong><span>龍懿慈惠堂恭奉聖像</span></div></div>
       </div>
@@ -67,16 +68,16 @@
   <p class="source">網站程式不使用外部 JavaScript 套件、追蹤器或第三方服務。</p></footer>
   <script>
   (()=>{
-    const data=window.QIAN_DATA||[];const $=s=>document.querySelector(s);let current=null,holy=0,finished=false;
+    const data=window.QIAN_DATA||[];const $=s=>document.querySelector(s);let current=null,holy=0,throws=0;
     const wrap=$('#resultWrap'),status=$('#status'),drawButton=$('#drawButton'),throwButton=$('#throwButton');
     function cardHTML(q,source='draw'){
       const lines=q.poem.map(x=>`<div>${x}</div>`).join('');
       return `<article class="result-card"><div class="result-head"><div class="small">六十甲子籤・第 ${String(q.id).padStart(2,'0')} 籤</div><h3>${q.gz}</h3></div><div class="poem">${lines}</div><div class="meaning"><h4>籤詩解說</h4><p>${q.meaning}</p></div><p class="interpret">${source==='draw'?'這份解說是對詩意的白話整理，作為思考參考，不作絕對預言。':'各廟籤本可能有不同寫法；請以實際求籤處版本為準。'}</p><div class="result-actions"><button class="btn btn-light" data-share="copy" type="button">複製分享連結</button><button class="btn btn-light" data-share="native" type="button">分享此籤</button></div></article>`;
     }
-    function showCard(q,source){if(!q)return;wrap.innerHTML=cardHTML(q,source);wrap.classList.add('show');wrap.scrollIntoView({behavior:'smooth',block:'center'});const url=new URL(location.href);url.searchParams.set('qian',String(q.id));history.replaceState({},'',url);}
-    function resetCups(){holy=0;for(let i=0;i<3;i++){const c=$(`#cup${i}`);c.className='cup';c.textContent=['一','二','三'][i]}}
-    drawButton.addEventListener('click',()=>{current=data[Math.floor(Math.random()*data.length)];finished=false;resetCups();wrap.classList.remove('show');wrap.innerHTML='';$('#drawNumber').textContent=`第 ${String(current.id).padStart(2,'0')} 籤・${current.gz}`;$('#drawHint').textContent='請確認心中所問之事，再擲筊請示。';status.textContent='籤已抽出，等待擲筊確認';throwButton.disabled=false;drawButton.textContent='重新抽籤'});
-    throwButton.addEventListener('click',()=>{if(!current||finished)return;const n=Math.random();const cup=$(`#cup${holy}`);if(n<1/3){cup.classList.add('success');cup.textContent='聖';holy++;status.textContent=`聖筊 ${holy} / 3`;if(holy===3){finished=true;throwButton.disabled=true;status.textContent='三次聖筊，顯示籤詩';$('#drawHint').textContent='請靜心閱讀籤詩，並以平常心思考。';showCard(current,'draw')}}else{cup.classList.add('fail');cup.textContent=n<2/3?'笑':'陰';status.textContent=n<2/3?'笑筊，未作確認。':'陰筊，未作確認。';$('#drawHint').textContent='本次未完成三次聖筊確認；可重新抽籤，或先停下來整理心意。';throwButton.disabled=true;drawButton.textContent='重新抽籤'}});
+    function showCard(q,source){if(!q)return;wrap.innerHTML=cardHTML(q,source);wrap.classList.add('show');wrap.scrollIntoView({behavior:'smooth',block:'start'});const url=new URL(location.href);url.searchParams.set('qian',String(q.id));history.replaceState({},'',url);}
+    function resetCups(){holy=0;throws=0;for(let i=0;i<3;i++){const c=$(`#cup${i}`);c.className='cup';c.textContent=['一','二','三'][i]}throwButton.disabled=true;throwButton.textContent='擲筊體驗（可略過）'}
+    drawButton.addEventListener('click',()=>{current=data[Math.floor(Math.random()*data.length)];resetCups();$('#drawNumber').textContent=`第 ${String(current.id).padStart(2,'0')} 籤・${current.gz}`;$('#drawHint').textContent='已抽出；完整籤詩和解說已顯示在下方。';status.textContent='抽籤完成，請往下閱讀籤詩與解說';throwButton.disabled=false;drawButton.textContent='重新抽一支籤';showCard(current,'draw')});
+    throwButton.addEventListener('click',()=>{if(!current||throws>=3)return;const n=Math.random();const cup=$(`#cup${throws}`);let outcome;if(n<1/3){cup.classList.add('success');cup.textContent='聖';holy++;outcome='聖筊'}else{cup.classList.add('fail');cup.textContent=n<2/3?'笑':'陰';outcome=n<2/3?'笑筊':'陰筊'}throws++;if(throws===3){throwButton.disabled=true;throwButton.textContent='體驗完成';status.textContent=holy===3?'三次聖筊（隨機模擬）；籤詩已顯示':'擲筊體驗完成；籤詩仍可直接閱讀'}else{status.textContent=`第 ${throws} 次：${outcome}。籤詩已顯示，不影響閱讀。`}});
     $('#lookupForm').addEventListener('submit',e=>{e.preventDefault();const raw=$('#lookupInput').value.trim();let q;if(/^\d{1,2}$/.test(raw))q=data[Number(raw)-1];else q=data.find(x=>x.gz===raw||x.gz.includes(raw));if(q){$('#lookupHint').textContent=`已找到第 ${String(q.id).padStart(2,'0')} 籤・${q.gz}`;showCard(q,'lookup')}else $('#lookupHint').textContent='查無此籤，請輸入 1–60 或完整干支，例如「甲子」。'});
     $('#allList').innerHTML=data.map(q=>`<button class="qian-chip" type="button" data-id="${q.id}">第 ${String(q.id).padStart(2,'0')} 籤　${q.gz}</button>`).join('');$('#allList').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b){const q=data[Number(b.dataset.id)-1];$('#lookupInput').value=q.gz;$('#lookupHint').textContent=`已找到第 ${String(q.id).padStart(2,'0')} 籤・${q.gz}`;showCard(q,'lookup')}});
     wrap.addEventListener('click',async e=>{const b=e.target.closest('[data-share]');if(!b)return;const url=location.href,title=`龍懿慈惠堂｜第${String(current?.id||new URL(location.href).searchParams.get('qian')).padStart(2,'0')}籤`;try{if(b.dataset.share==='native'&&navigator.share){await navigator.share({title,text:'龍懿慈惠堂六十甲子籤',url})}else{await navigator.clipboard.writeText(url);b.textContent='連結已複製';setTimeout(()=>b.textContent='複製分享連結',1800)}}catch(err){if(err.name!=='AbortError'){b.textContent='請使用瀏覽器分享功能';setTimeout(()=>b.textContent='分享此籤',1800)}}});
